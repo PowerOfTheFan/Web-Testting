@@ -1,0 +1,61 @@
+﻿@using MyPham.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<MyPham.Models.KhachHang>
+@{
+    ViewBag.Title = "SearchKH";
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+<h2>Kết quả tìm kiếm: @ViewBag.KQkh khách hàng</h2>
+<p>
+    @using (Html.BeginForm("SearchKH", "Admin", FormMethod.Post))
+    {
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Tìm khách hàng" name="SearchKH" value="@ViewBag.SearchTerm" id="search-box">
+        </div>
+        <div class="form-group">
+            <input type="submit" name="submit" value="Tim kiem" />
+        </div>
+
+    }
+</p>
+
+<table class="table">
+    <tr>
+        <th>TenKH </th>
+        <th>TaiKhoan</th>
+        <th>MatKhau</th>
+        <th>Email </th>
+        <th>DiaChiKH</th>
+        <th>DienThoaiKH</th>
+        <th>NgaySinh</th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenKH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TaiKhoan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MatKhau)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiaChiKH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DienThoaiKH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgaySinh)
+        </td>
+    </tr>
+}
+
+</table>

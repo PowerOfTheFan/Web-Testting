@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+    <link rel="stylesheet" type="text/css" href="~/Content/style.css" />
+    <!--[if IE 6]>
+    <link rel="stylesheet" type="text/css" href="iecss.css" />
+    <![endif]-->
+    <script type="text/javascript" src="~/Scripts/boxOver.js"></script>
+    <script src="~/tinymce/js/tinymce/tinymce.min.js"></script>
+    <script>tinymce.init({ selector: 'textarea' });</script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div id="main_container">
+        <div id="header">
+            <div class="top_right">
+                <div class="big_banner">
+                    <a href="">
+                        <img src="~/Images/banner000.png" />
+                    </a>
+                </div>
+            </div>
+            <div id="logo">
+                <a href="">
+                    <img src="~/Images/logo.jpg" width="255" height="85" />
+                </a>
+            </div>
+        </div>
+        <div id="main_content">
+            <div id="menu_tab">
+                <ul class="menu">
+                    <li>
+                        <a href="@Url.Action("Index","Admin")" class="nav">Trang chủ</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Sanpham","Admin")" class="nav">Sản phẩm</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("QLdonhang","Admin")" class="nav">QL đơn hàng</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("DSdonhang","Admin")" class="nav">DS đơn hàng</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("QLloaisp","AdloaiSP")" class="nav">QL loaiSP</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("DSkhachhang", "Admin")" class="nav">DS khachhang</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Logout", "Admin")" class="nav">Đăng xuất</a>
+                    </li>
+                    @*<li><a href="@Html.ActionLink("SanPham","Admin")" class="nav">Sản phẩm</a></li>
+                    <li class="divider"></li>
+                    <li><a href="@Html.ActionLink("ThuongHieu","Admin")" class="nav">Thương hiệu</a></li>
+                    <li class="divider"></li>
+                    <li><a href="@Html.ActionLink("LoaiSp","Admin")" class="nav">Loại sản phẩm</a></li>*@
+                    
+                </ul>
+            </div>
+        </div>
+        <div>
+            @RenderBody()
+        </div>
+        <div class="footer">
+            <div class="left_footer">
+                <img src="~/Images/logo.jpg" width="200" height="42" />
+            </div>
+            <div class="center_footer">
+                &copy; @DateTime.Now.Year Nguyen Duc Trung.<br />
+            </div>
+            <div class="right_footer">
+            </div>
+        </div>
+     </div>
+        
+</body>
+</html>

@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+    <link rel="stylesheet" type="text/css" href="~/Content/style.css" />
+    <!--[if IE 6]>
+    <link rel="stylesheet" type="text/css" href="iecss.css" />
+    <![endif]-->
+    <script type="text/javascript" src="~/Scripts/boxOver.js"></script>
+
+</head>
+<body>
+
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.12&appId=159358194772052&autoLogAppEvents=1';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <div id="main_container">
+        <div id="header">
+            <div class="top_right">
+                <div class="big_banner"> 
+                    <a href="">
+                        <img src="~/Images/banner000.png" />
+                    </a> 
+                </div>
+            </div>
+            <div id="logo"> 
+                <a href="">
+                    <img src="~/Images/logo.jpg" width="255" height="85"/>
+                </a> 
+            </div>
+        </div>
+        <div id="main_content">
+            <div id="menu_tab">
+                <ul class="menu">
+                    <li><a href="@Url.Action("index","Mypham")" class="nav">Trang chủ</a></li>
+                    <li class="divider"></li>
+                    <li><a href="@Url.Action("index","Mypham")" class="nav">Sản phẩm</a></li>
+                    <li class="divider"></li>
+                    <li><a href="" class="nav">Hàng đặc biệt</a></li>
+                    <li class="divider"></li>
+                    <li><a href="@Url.Action("Giohang","Giohang")" class="nav">Giỏ hàng</a></li>
+                    <li class="divider"></li>
+                    <li><a href="@Url.Action("Contact","Contact")" class="nav">Liên hệ</a></li>
+                </ul>
+            </div>
+            <!-- end of menu tab -->
+            @*<div class="crumb_navigation"> Navigation: <span class="current">@Request.Url.ToString()</span> </div>*@
+            <div class="left_content">
+                <div class="title_box">Loại sản phẩm</div>
+                <ul class="left_menu">
+                    @Html.Action("loaiSP", "MyPham")
+
+                </ul>
+                <div class="title_box">Hàng đặc biệt</div>
+
+
+
+                <div class="border_box">
+                    <img src="~/Images/cc.jpg" width="183" height="140"/>
+                </div>
+                <div class="title_box">Nhận tin mới</div>
+                <div class="border_box">
+                    <input type="text" name="newsletter" class="newsletter_input" value="your email" />
+                    <a href="" class="join">subscribe</a>
+                </div>
+                <div class="banner_adds"> 
+                    <a href="">
+                        <img src="~/Images/aa.jpg" width="167" height="167"/>
+                    </a> 
+                </div>
+            </div>
+            <!-- end of left content -->
+
+            <div class="center_content">
+                <div>
+                    @RenderBody()
+                </div>
+            </div>
+
+            <!-- end of center content -->
+            <div class="right_content">
+                <div class="title_box">Tìm kiếm</div>
+                <div class="border_box">
+                    @*@Html.Action("search","mypham")*@     
+                    @using (Html.BeginForm("Kqtimkiem", "mypham", FormMethod.Post))
+                    {
+                        <div class="form-group">
+                            <br />
+                            <input type="text" class="form-control" placeholder="Tìm sản phẩm" name="Search" value="@ViewBag.SearchTerm" id="search-box">
+                        </div>
+                        <div class="form-group">
+                            <br />
+                            <input type="submit" name="submit" value="Tim kiem" />
+                        </div>
+                    }     
+                    
+                    
+                </div>
+                <div class="shopping_cart">
+                    
+                    <div class="title_box"> <a href="@Url.Action("Giohang", "Giohang")">Giỏ hàng</a> </div>
+                    <div class="cart_details">
+                        Số lượng: @Html.Action("SoluongPartial","Giohang") <br />
+                        <span class="border_cart"></span> Tổng tiền: <span class="price">@Html.Action("TongtienPartial","Giohang") VND</span>
+                    </div>
+                    <div class="cart_icon"><a href=""><img src="~/Images/shoppingcart.png" alt="" width="35" height="35" border="0" /></a></div>
+                </div>
+                <div class="title_box">What’s new</div>
+                <div class="border_box">
+                    <img src="~/Images/yu.jpg" width="180" height="140"/>
+                </div>
+                <div class="title_box">Thương hiệu</div>
+                <ul class="left_menu">
+                    @Html.Action("NhaSX", "MyPham")
+                </ul>
+                <div class="banner_adds"> 
+                <a href="">
+                    <br />
+                    <img src="~/Images/mm.jpg" width="180" height="220"/>
+                 </a> 
+                </div>
+            </div>
+            <!-- end of right content -->
+        </div>
+        <!-- end of main content -->
+        <div class="footer">
+            <div class="left_footer"> 
+                <img src="~/Images/logo.jpg"  width="200" height="42"/>
+            </div>
+            <div class="center_footer">
+                 &copy; @DateTime.Now.Year Nguyen Duc Trung.<br />
+            </div>
+            <div class="right_footer">
+                 <a href="@Url.Action("index","Mypham")">home</a>
+                 <a href="">about</a>
+                 <a href="">sitemap</a> 
+                 <a href="">rss</a>
+                 <a href="@Url.Action()">contact us</a>
+             </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
