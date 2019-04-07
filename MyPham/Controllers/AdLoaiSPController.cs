@@ -95,9 +95,9 @@ namespace MyPham.Controllers
 		//author Phuc
 		public void Test1()
 		{
-			//code edit 1
-			//code edit 2
-			//code edit 3
+			//code Change on local 1
+			//code Change on local 2
+			//code Change on local 3
 		}
 
 
