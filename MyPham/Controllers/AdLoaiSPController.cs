@@ -95,15 +95,12 @@ namespace MyPham.Controllers
 		//author Phuc
 		public void Test1()
 		{
-<<<<<<< HEAD
 			//code Change on local 1
 			//code Change on local 2
 			//code Change on local 3
-=======
 			//code Change on Host 1
 			//code Change on Host 2
 			//code Change on Host 3
->>>>>>> 1fe9e35af6473352da645afb825561dc60a64b54
 		}
 
 
