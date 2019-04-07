@@ -84,6 +84,7 @@ namespace MyPham.Controllers
         public void Test()
         {
             //we will add code here to test application
+            //Change code on Host
         }
 
     }
