@@ -42,3 +42,5 @@ b9: push source lên server
 	- git branch (hiện tất cả các nhánh tại local)
 	- git branch -a (hiện tất cả nhánh của local và remote)
 	- git branch -r (chỉ hiện nhánh remote)
+	
+* git push origin --delete feature/login xóa remote branch từ local
