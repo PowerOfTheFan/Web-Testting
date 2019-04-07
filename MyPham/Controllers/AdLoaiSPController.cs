@@ -74,11 +74,17 @@ namespace MyPham.Controllers
             db.SubmitChanges();
             return RedirectToAction("QLloaiSP");
         }
-
         public void login()
         {
             Response.StatusCode = 404;
             //return null;
         }
+
+        //author: Tien
+        public void Test()
+        {
+            //we will add code here to test application
+        }
+
     }
 }
