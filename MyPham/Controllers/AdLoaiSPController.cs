@@ -85,6 +85,21 @@ namespace MyPham.Controllers
         {
             //we will add code here to test application
         }
+		
+		//author: Tien
+        public void Test()
+        {
+            //we will add code here to test application
+        }
+		
+		//author Phuc
+		public void Test1()
+		{
+			//code edit 1
+			//code edit 2
+			//code edit 3
+		}
+
 
     }
 }
