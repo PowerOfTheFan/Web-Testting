@@ -23,9 +23,8 @@ namespace MyPham.Controllers
 
             return View(db.LoaiSPs.OrderBy(n => n.TenLoai));
         }
-
-
-        [HttpGet]
+		
+		[HttpGet]
         public ActionResult Create()
         {
             return View();
@@ -43,7 +42,16 @@ namespace MyPham.Controllers
             db.SubmitChanges();
             return RedirectToAction("QLloaiSP");
         }
-
+		
+		
+		
+		//author Phuc
+		public void Test1()
+		{
+			//code edit 1
+			//code edit 2
+			//code edit 3
+		}
 
         [HttpGet]
         public ActionResult Delete(int id)
@@ -61,6 +69,16 @@ namespace MyPham.Controllers
             }
             return View();
         }
+		
+		
+		//author Phuc
+		public void Test1()
+		{
+			//code edit 1
+			//code edit 2
+			//code edit 3
+		}
+		
         [HttpPost, ActionName("Delete")]
         public ActionResult Xoa(int id)
         {

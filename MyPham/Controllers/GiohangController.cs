@@ -27,6 +27,14 @@ namespace MyPham.Controllers
             }
             return listG;
         }
+		
+		
+		
+		//author phuc
+		public ActionResult Chucnangsesua()
+        {
+            return View();
+        }
 
         //them gio hang
         public ActionResult Themgiohang(int idSp, string strUrl)
@@ -198,6 +206,7 @@ namespace MyPham.Controllers
         {
             return View();
         }
+		
 
     }
 }

@@ -68,6 +68,13 @@ namespace MVC_DoAn.Controllers
             var nsx = from a in data.NhaSanXuats select a;
             return PartialView(nsx);
         }
+		
+		//author phuc
+		public action themchucnang()
+		{
+			//code dong 1
+			//code dong 2
+		}
 
         public ActionResult SpTheoLoai(int id, int ? page)
         {
