@@ -91,20 +91,21 @@ namespace MVC_DoAn.Controllers
             var sp = from s in data.SanPhams where s.MaSP == id select s;
             return View(sp.Single());
         }
-        
+        //author: Tien
+		//Edit MyPhamController nhanh 
         [HttpPost]
         public ActionResult KQtimkiem(string Search, int? page)
         {
 
             List<SanPham> kqTk = data.SanPhams.Where(n => n.TenSP.Contains(Search)).ToList();
 
-            int pageSize = 12;
-            int pageNum = (page ?? 1);
+            int pageSize = 20;
+            int pageNum = (page ?? 100);
 
             if (kqTk.Count == 0)
             {
                 ViewBag.KQtk = kqTk.Count.ToString();
-                return RedirectToAction("Index");
+                return RedirectToAction("Result");
             }
             else
             {
