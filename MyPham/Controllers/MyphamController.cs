@@ -49,6 +49,7 @@ namespace MVC_DoAn.Controllers
             var s = data.SanPhams.OrderByDescending(n => n.GiaBan).Take(1);
             return View(s);
         }
+		
 
         public ActionResult SPdacbiets(int? page)
         {
@@ -112,5 +113,12 @@ namespace MVC_DoAn.Controllers
                 return View(kqTk.OrderBy(n => n.TenSP).ToPagedList(pageNum, pageSize));
             }
         }
+		
+		//author phuc
+		 public ActionResult hello()
+        {
+            //hello phuc
+        }
     }
+	
 }

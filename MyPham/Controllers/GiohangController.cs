@@ -198,6 +198,12 @@ namespace MyPham.Controllers
         {
             return View();
         }
+		
+		//author phuc
+		 public ActionResult hello()
+        {
+            //hello phuc
+        }
 
     }
 }
