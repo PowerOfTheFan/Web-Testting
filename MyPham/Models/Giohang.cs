@@ -6,6 +6,7 @@ using System.Web;
 namespace MyPham.Models
 {
     public class Giohang
+	hịdjdjd
     {
         DbMyPhamDataContext db = new DbMyPhamDataContext();
 
