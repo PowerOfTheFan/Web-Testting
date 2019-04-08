@@ -48,6 +48,8 @@ namespace MyPham.Controllers
             }
         }
 
+
+      
         // tong so luong
         private int tongSl()
         {
@@ -59,6 +61,7 @@ namespace MyPham.Controllers
 
             }
             return s;
+            
         }
 
         // tinh tong tien
@@ -160,7 +163,8 @@ namespace MyPham.Controllers
             List<Giohang> listG = Laygiohang();
             ddh.MaKH = kh.MaKH;
             ddh.NgayDat = DateTime.Now;
-            
+          
+
             //try
             //{
                 var ngaygiao = string.Format("{0:MM/dd/YYYY}", f["Ngaygiao"]);
@@ -198,6 +202,7 @@ namespace MyPham.Controllers
         {
             return View();
         }
-
+        //author: Tien
+        //SUA DONG
     }
 }
